@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/styles.chunk.css","sources":["webpack:///./styles/_main.scss"],"sourcesContent":[".layout {\n  margin: 20;\n  padding: 20;\n  border: 1px solid #DDD; }\n"],"mappings":"AAAA;AACA;AACA;AACA;;","sourceRoot":""}

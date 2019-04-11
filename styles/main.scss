@@ -1,0 +1,127 @@
+$gutter: 1rem;
+
+:root {
+	--color-grey-light-1: #f4f2f2;
+	--color-grey-light-2: #f0eeee;
+	--color-grey-light-3: #ccc;
+	
+	--color-grey-dark-1: #333;
+	--color-grey-dark-2: #777;
+	--color-grey-dark: #999;
+
+	--shadow-dark: 0 2rem 6rem rgba(0,0,0, 1);
+	--shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+}
+
+.layout {
+  margin: 20px;
+  padding: 20px;
+}
+
+.modal-picture {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 90%;
+	cursor: pointer;
+}
+
+.gallery {
+		max-width: 114rem;
+    margin: 0 auto;
+
+    &-row {
+			float: left;
+
+			&:not(:last-child) {
+				margin-right: $gutter;
+			}
+			width: calc((100% - 2 * #{$gutter}) / 3);
+    }
+		
+		img {
+			margin-bottom: $gutter;
+			width: 100%;
+			cursor: pointer;
+			
+			&:hover {
+				transform: translate(3px, -3px)				
+			}
+		}
+}
+
+.search-photo {
+	z-index: 100;
+	opacity: 0.65;
+  filter: alpha(opacity=75);
+}
+
+.search-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.search-top {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-bottom: 10px;
+}
+
+.search {
+	width: 50%;
+	z-index: 200;
+	flex: 0 0 40%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__input {
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+		background-color: var(--color-grey-light-1);
+		border: solid 1px;
+		padding: .7rem 2rem;
+		border-radius: 100px;
+		width: 85%;
+		transition: all .2s;
+		margin-right: -3.25rem;
+		box-shadow: var(--shadow-light);
+		
+		&:focus {
+			outline: none;
+			width: 100%;
+			background-color: var(--color-grey-light-2);
+			box-shadow: var(--shadow-dark);
+		}
+
+		&::-webkit-input-placeholder {
+			font-weight: 100;
+			color: var(--color-grey-light-3);
+		}
+	}
+
+	&__input:focus + &__button {
+		background-color: var(--color-grey-light-2);
+	}
+
+	&__button {
+		border: none;
+		background-color: var(--color-grey-light-1);
+		font-size: 24px;
+		
+		&:focus {
+			outline: none;
+		}
+
+		&:active {
+			transform: translateY(2px);
+		}
+	}
+}
